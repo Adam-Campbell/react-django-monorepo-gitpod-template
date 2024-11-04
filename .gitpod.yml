@@ -1,0 +1,12 @@
+tasks:
+  - name: run backend
+    init: |
+      cd backend
+      pip install -r requirements.txt
+      python manage.py migrate
+    command: python manage.py runserver 0.0.0.0:8000
+
+  - name: run frontend
+    init: cd frontend && npm install
+    command: npm run dev
+
